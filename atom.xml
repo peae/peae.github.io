@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>暗影喵帕斯</title>
+  <icon>https://peae.github.io/icon.png</icon>
+  
+  <link href="https://peae.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://peae.github.io/"/>
+  <updated>2021-05-21T10:14:35.000Z</updated>
+  <id>https://peae.github.io/</id>
+  
+  <author>
+    <name>某人</name>
+    <email>hhsilo@outlook.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CA证书生成和配置</title>
+    <link href="https://peae.github.io/2021/05/21/CA%E8%AF%81%E4%B9%A6%E7%94%9F%E6%88%90%E5%92%8C%E9%85%8D%E7%BD%AE/"/>
+    <id>https://peae.github.io/2021/05/21/CA%E8%AF%81%E4%B9%A6%E7%94%9F%E6%88%90%E5%92%8C%E9%85%8D%E7%BD%AE/</id>
+    <published>2021-05-21T10:14:35.000Z</published>
+    <updated>2021-05-21T10:14:35.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;生成证书&quot;&gt;&lt;a href=&quot;#生成证书&quot; class=&quot;headerlink&quot; title=&quot;生成证书&quot;&gt;&lt;/a&gt;生成证书&lt;/h3&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://peae.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+    <category term="HTTPS" scheme="https://peae.github.io/tags/HTTPS/"/>
+    
+    <category term="TLS" scheme="https://peae.github.io/tags/TLS/"/>
+    
+    <category term="CA证书" scheme="https://peae.github.io/tags/CA%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linuxsqldocker</title>
+    <link href="https://peae.github.io/2021/02/25/linuxsqldocker/"/>
+    <id>https://peae.github.io/2021/02/25/linuxsqldocker/</id>
+    <published>2021-02-25T10:12:54.000Z</published>
+    <updated>2021-02-25T10:12:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="Note" scheme="https://peae.github.io/categories/Note/"/>
+    
+    
+    <category term="linux" scheme="https://peae.github.io/tags/linux/"/>
+    
+    <category term="sql" scheme="https://peae.github.io/tags/sql/"/>
+    
+    <category term="docker" scheme="https://peae.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开发中遇到的网络问题</title>
+    <link href="https://peae.github.io/2021/01/08/%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/"/>
+    <id>https://peae.github.io/2021/01/08/%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/</id>
+    <published>2021-01-08T02:48:15.000Z</published>
+    <updated>2021-01-08T02:48:15.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;使用代理的前提是要有一台代理服务器，配置好代理服务器之后，在Windows10系统中，打开&lt;code&gt;设置/网络和Internet/代理/手动设置代理&lt;/code&gt;,确保代理已经打开。&lt;/p&gt;
+&lt;p&gt;用git克隆GitHub上的项目，端口换成自己的端口：&lt;/p&gt;
+&lt;figu</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="https://peae.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git使用总结</title>
+    <link href="https://peae.github.io/2021/01/07/git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
+    <id>https://peae.github.io/2021/01/07/git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</id>
+    <published>2021-01-07T01:20:03.000Z</published>
+    <updated>2021-01-07T01:20:03.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Git-配置&quot;&gt;&lt;a href=&quot;#Git-配置&quot; class=&quot;headerlink&quot; title=&quot;Git 配置&quot;&gt;&lt;/a&gt;Git 配置&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;git</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="https://peae.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="git" scheme="https://peae.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue使用总结</title>
+    <link href="https://peae.github.io/2021/01/06/vue%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
+    <id>https://peae.github.io/2021/01/06/vue%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</id>
+    <published>2021-01-06T09:56:27.000Z</published>
+    <updated>2021-01-06T09:56:27.000Z</updated>
+    
+    
+    
+    
+    <category term="前端开发" scheme="https://peae.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="vue" scheme="https://peae.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序开发注意事项</title>
+    <link href="https://peae.github.io/2021/01/05/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+    <id>https://peae.github.io/2021/01/05/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</id>
+    <published>2021-01-05T08:07:12.000Z</published>
+    <updated>2021-01-05T08:07:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;微信小程序官方文档：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端开发" scheme="https://peae.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="微信小程序" scheme="https://peae.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+</feed>
