@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>𝗟𝗼𝗹𝗶𝗟𝗶𝘃𝗲</title>
+  <icon>https://blog.lolive.top/icon.png</icon>
+  
+  <link href="https://blog.lolive.top/atom.xml" rel="self"/>
+  
+  <link href="https://blog.lolive.top/"/>
+  <updated>2024-03-10T07:19:01.000Z</updated>
+  <id>https://blog.lolive.top/</id>
+  
+  <author>
+    <name>no one</name>
+    <email>loli@lolive.top</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Google Play 免税设置</title>
+    <link href="https://blog.lolive.top/posts/43832024/"/>
+    <id>https://blog.lolive.top/posts/43832024/</id>
+    <published>2024-03-10T07:19:01.000Z</published>
+    <updated>2024-03-10T07:19:01.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;按照网上的说法，美国地区有5个免税州，俄勒冈Oregon、特拉华州Delaware、阿拉斯加Alaska、蒙大拿Montana、新罕布尔什州New Hampshellore。其中阿拉斯加州部分城市是不免税的。&lt;/p&gt;
+&lt;p&gt;我用信用卡绑 Google Play</summary>
+        
+      
+    
+    
+    
+    <category term="知道" scheme="https://blog.lolive.top/categories/%E7%9F%A5%E9%81%93/"/>
+    
+    
+    <category term="Google Play" scheme="https://blog.lolive.top/tags/Google-Play/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>外观模式</title>
+    <link href="https://blog.lolive.top/posts/3a68f720/"/>
+    <id>https://blog.lolive.top/posts/3a68f720/</id>
+    <published>2024-03-09T07:27:44.000Z</published>
+    <updated>2024-03-09T07:27:44.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/../img/design-pattern-facade.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="设计模式" scheme="https://blog.lolive.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>适配器模式</title>
+    <link href="https://blog.lolive.top/posts/4c74d875/"/>
+    <id>https://blog.lolive.top/posts/4c74d875/</id>
+    <published>2024-03-09T07:11:09.000Z</published>
+    <updated>2024-03-09T07:11:09.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/../img/design-pattern-adapter.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="设计模式" scheme="https://blog.lolive.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ASP.NET Core 学习（一）</title>
+    <link href="https://blog.lolive.top/posts/f44d4d94/"/>
+    <id>https://blog.lolive.top/posts/f44d4d94/</id>
+    <published>2024-02-16T09:29:43.000Z</published>
+    <updated>2024-02-16T09:29:43.000Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>用微软的 outlook 发送邮件时报错</title>
+    <link href="https://blog.lolive.top/posts/e39b176c/"/>
+    <id>https://blog.lolive.top/posts/e39b176c/</id>
+    <published>2023-11-11T12:36:40.000Z</published>
+    <updated>2023-11-11T12:36:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在使用 .net 自带的 SmtpClient 发送邮件的时候报错：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="知道" scheme="https://blog.lolive.top/categories/%E7%9F%A5%E9%81%93/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Go 语言中的浅拷贝和深拷贝</title>
+    <link href="https://blog.lolive.top/posts/9c9c65a4/"/>
+    <id>https://blog.lolive.top/posts/9c9c65a4/</id>
+    <published>2023-09-09T14:20:54.000Z</published>
+    <updated>2023-09-09T14:20:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;什么是浅拷贝？&quot;&gt;&lt;a href=&quot;#什么是浅拷贝？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Golang" scheme="https://blog.lolive.top/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github 网络问题</title>
+    <link href="https://blog.lolive.top/posts/e8bf53bc/"/>
+    <id>https://blog.lolive.top/posts/e8bf53bc/</id>
+    <published>2023-05-13T14:22:36.000Z</published>
+    <updated>2023-05-13T14:22:36.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;直接在 &lt;code&gt;~/.ssh/config&lt;/code&gt; 中无脑配置：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="知道" scheme="https://blog.lolive.top/categories/%E7%9F%A5%E9%81%93/"/>
+    
+    
+    <category term="Git" scheme="https://blog.lolive.top/tags/Git/"/>
+    
+    <category term="Github" scheme="https://blog.lolive.top/tags/Github/"/>
+    
+    <category term="proxy" scheme="https://blog.lolive.top/tags/proxy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>建造者模式</title>
+    <link href="https://blog.lolive.top/posts/fe816c3c/"/>
+    <id>https://blog.lolive.top/posts/fe816c3c/</id>
+    <published>2023-04-16T05:04:08.000Z</published>
+    <updated>2023-04-16T05:04:08.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/../img/design-pattern-builder.png&quot; alt=&quot;builder&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight c#&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="C#" scheme="https://blog.lolive.top/tags/C/"/>
+    
+    <category term="设计模式" scheme="https://blog.lolive.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>策略模式</title>
+    <link href="https://blog.lolive.top/posts/72e3b671/"/>
+    <id>https://blog.lolive.top/posts/72e3b671/</id>
+    <published>2023-03-07T13:10:21.000Z</published>
+    <updated>2023-03-07T13:10:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/../img/design-pattern-strategy.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="设计模式" scheme="https://blog.lolive.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>抽象工厂模式</title>
+    <link href="https://blog.lolive.top/posts/9b7d6e62/"/>
+    <id>https://blog.lolive.top/posts/9b7d6e62/</id>
+    <published>2023-02-26T08:20:27.000Z</published>
+    <updated>2023-02-26T08:20:27.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;苹果公司生产手机和电脑，小米公司也生产手机和电脑，抽象工厂模式就是要抽象这里的公司和产品，外部调用抽象工厂客户端的时候只需指定一个工厂，无需指定具体的产品。&lt;/p&gt;
+&lt;p&gt;抽象工厂模式包含：抽象的工厂，具体的工厂，抽象的产品，具体的产品，提供给外部使用的客户端。&lt;/p&gt;
+&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="设计模式" scheme="https://blog.lolive.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    <category term="Golang" scheme="https://blog.lolive.top/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.Net学习</title>
+    <link href="https://blog.lolive.top/posts/38ea7f4b/"/>
+    <id>https://blog.lolive.top/posts/38ea7f4b/</id>
+    <published>2022-12-04T06:28:52.000Z</published>
+    <updated>2022-12-04T06:28:52.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;构造函数和初始化&quot;&gt;&lt;a href=&quot;#构造函数和初始化&quot; class=&quot;headerlink&quot; title=&quot;构造函数和初始化&quot;&gt;&lt;/a&gt;构造函数和初始化&lt;/h2&gt;&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="备忘" scheme="https://blog.lolive.top/categories/%E5%A4%87%E5%BF%98/"/>
+    
+    
+    <category term="C#" scheme="https://blog.lolive.top/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 VSCode 中远程调试 Go 程序</title>
+    <link href="https://blog.lolive.top/posts/73130bba/"/>
+    <id>https://blog.lolive.top/posts/73130bba/</id>
+    <published>2022-10-15T09:13:03.000Z</published>
+    <updated>2022-10-15T09:13:03.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;调试远程服务器中的 Go 程序&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在服务端执行：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="知道" scheme="https://blog.lolive.top/categories/%E7%9F%A5%E9%81%93/"/>
+    
+    
+    <category term="Golang" scheme="https://blog.lolive.top/tags/Golang/"/>
+    
+    <category term="dlv" scheme="https://blog.lolive.top/tags/dlv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTeX 简单用用</title>
+    <link href="https://blog.lolive.top/posts/4528fd42/"/>
+    <id>https://blog.lolive.top/posts/4528fd42/</id>
+    <published>2022-08-09T12:57:50.000Z</published>
+    <updated>2022-08-09T12:57:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先，创建一个最小的完整源文件，&lt;code&gt;sample.tex&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight latex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="知道" scheme="https://blog.lolive.top/categories/%E7%9F%A5%E9%81%93/"/>
+    
+    
+    <category term="LaTeX" scheme="https://blog.lolive.top/tags/LaTeX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 Go 中执行事务</title>
+    <link href="https://blog.lolive.top/posts/3039fbbf/"/>
+    <id>https://blog.lolive.top/posts/3039fbbf/</id>
+    <published>2022-07-21T13:37:07.000Z</published>
+    <updated>2022-07-21T13:37:07.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先从标准库中找出 &lt;code&gt;sql.DB&lt;/code&gt; 和 &lt;code&gt;sql.Tx&lt;/code&gt; 公共的方法，作为操作数据库的接口。&lt;/p&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Golang" scheme="https://blog.lolive.top/tags/Golang/"/>
+    
+    <category term="transactions" scheme="https://blog.lolive.top/tags/transactions/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 Go 中使用 pprof 工具</title>
+    <link href="https://blog.lolive.top/posts/338086b9/"/>
+    <id>https://blog.lolive.top/posts/338086b9/</id>
+    <published>2022-07-15T12:39:28.000Z</published>
+    <updated>2022-07-15T12:39:28.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;p&gt;下载并安装 Graphviz 工具&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Golang" scheme="https://blog.lolive.top/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在多个 gRPC 服务之间使用链路追踪</title>
+    <link href="https://blog.lolive.top/posts/5a43dcd/"/>
+    <id>https://blog.lolive.top/posts/5a43dcd/</id>
+    <published>2022-07-02T13:04:54.000Z</published>
+    <updated>2022-07-02T13:04:54.000Z</updated>
+    
+    
+    <summary type="html">可观测性</summary>
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Golang" scheme="https://blog.lolive.top/tags/Golang/"/>
+    
+    <category term="gRPC" scheme="https://blog.lolive.top/tags/gRPC/"/>
+    
+    <category term="OpenTelemetry" scheme="https://blog.lolive.top/tags/OpenTelemetry/"/>
+    
+    <category term="Jaeger" scheme="https://blog.lolive.top/tags/Jaeger/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PostgreSQL 备份与恢复</title>
+    <link href="https://blog.lolive.top/posts/5790da06/"/>
+    <id>https://blog.lolive.top/posts/5790da06/</id>
+    <published>2022-06-22T12:39:43.000Z</published>
+    <updated>2022-06-22T12:39:43.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;查看磁盘占用情况&quot;&gt;&lt;a href=&quot;#查看磁盘占用情况&quot; class=&quot;headerlink&quot; title=&quot;查看磁盘占用情况&quot;&gt;&lt;/a&gt;查看磁盘占用情况&lt;/h2&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="备忘" scheme="https://blog.lolive.top/categories/%E5%A4%87%E5%BF%98/"/>
+    
+    
+    <category term="PostgreSQL" scheme="https://blog.lolive.top/tags/PostgreSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 gRPC 中使用中间件</title>
+    <link href="https://blog.lolive.top/posts/fedcb43a/"/>
+    <id>https://blog.lolive.top/posts/fedcb43a/</id>
+    <published>2022-06-07T13:09:53.000Z</published>
+    <updated>2022-06-07T13:09:53.000Z</updated>
+    
+    
+    <summary type="html">跟 http 的中间件差不多</summary>
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Golang" scheme="https://blog.lolive.top/tags/Golang/"/>
+    
+    <category term="gRPC" scheme="https://blog.lolive.top/tags/gRPC/"/>
+    
+    <category term="gRPC-middleware" scheme="https://blog.lolive.top/tags/gRPC-middleware/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 PostgreSQL 实现全文搜索</title>
+    <link href="https://blog.lolive.top/posts/6b725fb3/"/>
+    <id>https://blog.lolive.top/posts/6b725fb3/</id>
+    <published>2022-06-03T13:40:05.000Z</published>
+    <updated>2022-06-03T13:40:05.000Z</updated>
+    
+    
+    <summary type="html">没有 Elasticsearch 牛，但贵在省心，大多数搜索场景足够了</summary>
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="PostgreSQL" scheme="https://blog.lolive.top/tags/PostgreSQL/"/>
+    
+    <category term="Full Text Search" scheme="https://blog.lolive.top/tags/Full-Text-Search/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 Go 中使用 Etcd 作为服务注册中心</title>
+    <link href="https://blog.lolive.top/posts/850b06a1/"/>
+    <id>https://blog.lolive.top/posts/850b06a1/</id>
+    <published>2022-05-27T13:13:45.000Z</published>
+    <updated>2022-05-27T13:13:45.000Z</updated>
+    
+    
+    <summary type="html">所谓的 Service Discovery</summary>
+    
+    
+    
+    <category term="编程" scheme="https://blog.lolive.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Golang" scheme="https://blog.lolive.top/tags/Golang/"/>
+    
+    <category term="gRPC" scheme="https://blog.lolive.top/tags/gRPC/"/>
+    
+    <category term="etcd" scheme="https://blog.lolive.top/tags/etcd/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,407 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Linux 基本操作 | 𝗟𝗼𝗹𝗶𝗟𝗶𝘃𝗲</title><meta name="author" content="no one,loli@lolive.top"><meta name="copyright" content="no one"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="简单的几个命令"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://blog.lolive.top/posts/f328253f/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux 基本操作',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-02-25 18:12:54'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC&display=swap" rel="stylesheet"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="𝗟𝗼𝗹𝗶𝗟𝗶𝘃𝗲" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar2.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/other/privacy-policy"><i class="fa-fw fa-solid fa-user-shield"></i><span> 隐私政策</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2021/02/25/VEjx9DIBZ4nkiwN.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="𝗟𝗼𝗹𝗶𝗟𝗶𝘃𝗲"><span class="site-name">𝗟𝗼𝗹𝗶𝗟𝗶𝘃𝗲</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/other/privacy-policy"><i class="fa-fw fa-solid fa-user-shield"></i><span> 隐私政策</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux 基本操作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-25T10:12:54.000Z" title="发表于 2021-02-25 18:12:54">2021-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-25T10:12:54.000Z" title="更新于 2021-02-25 18:12:54">2021-02-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%87%E5%BF%98/">备忘</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p><a target="_blank" rel="noopener" href="https://git-scm.com/download/linux">https://git-scm.com/download/linux</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.gitignore</span><br><span class="line">ssh -i id_rsa2 -T git@e.coding.net</span><br><span class="line">git <span class="built_in">log</span> --oneline --decorate --graph --all</span><br><span class="line">git checkout -b iss53</span><br><span class="line">git <span class="built_in">clone</span> -c http.proxy=<span class="string">&quot;127.0.0.1:10809&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把私钥添加到sshagent里</span></span><br><span class="line">ssh-agent bash</span><br><span class="line">ssh-add ~/.ssh/id_ed25519</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">ssh-add -D</span><br><span class="line">ssh-add -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在~/.ssh/文件夹下</span></span><br><span class="line"><span class="comment">#activehacker account</span></span><br><span class="line">Host github.com-activehacker</span><br><span class="line">	HostName github.com</span><br><span class="line">	User git</span><br><span class="line">	IdentityFile ~/.ssh/id_rsa_activehacker</span><br><span class="line"></span><br><span class="line"><span class="comment">#jexchan account</span></span><br><span class="line">Host github.com-jexchan</span><br><span class="line">	HostName github.com</span><br><span class="line">	User git</span><br><span class="line">	IdentityFile ~/.ssh/id_rsa_jexchan</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/jexchan/2351996">https://gist.github.com/jexchan/2351996</a></p>
+<h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><p><strong>开发环境</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade -y</span><br><span class="line">sudo apt install build-essential</span><br><span class="line"></span><br><span class="line">sudo apt remove build-essential</span><br><span class="line">sudo apt autoremove</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行sudo命令时自动输入密码</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;password&quot;</span> | sudo -S apt update</span><br></pre></td></tr></table></figure>
+
+<p><strong>归档文件和提取归档文件</strong></p>
+<p>1、使用tar归档</p>
+<ul>
+<li>-c表示创建新的归档文件</li>
+<li>-f表示归档文件名，该选项后面必须跟一个文件名称，文件名必须紧跟在-f之后出现，而且-f应该是选项中的最后一个</li>
+<li>-t可以列出归档文件中所包含的文件</li>
+<li>-v或-vv参数可以在命令输出中加入更多的细节信息</li>
+<li>-r可以将新文件追加到已有的归档文件末尾</li>
+<li>-t可以列出归档文件中的内容</li>
+<li>-x可以将归档文件的内容提取到当前目录</li>
+<li>-C将归档文件的内容提取到指定目录中</li>
+<li>-A合并多个tar文件</li>
+<li>-j指定压缩成bunzip2格式；</li>
+<li>-z指定压缩成gzip格式；</li>
+<li>–lzma指定压缩成lzma格式</li>
+<li>-a或–auto-compress选项根据扩展名自动选择压缩算法</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tar -cf archive.tar file1 file2 file3 folder1 .. <span class="comment"># 创建新的归档文件</span></span><br><span class="line">tar -rvf original.tar new_file <span class="comment"># 将新文件追加到已有的归档文件末尾</span></span><br><span class="line">tar -xf archive.tar -C /path/to/extraction_directory <span class="comment"># 将归档文件的内容提取到指定目录中</span></span><br><span class="line">tar -xvf file.tar file1 file4 <span class="comment"># 只提取file1和file4，忽略其他文件</span></span><br><span class="line">tar -xf archive.tar -C /path/to/extraction_directory</span><br><span class="line">tar -Af file1.tar file2.tar <span class="comment"># 合并多个tar文件</span></span><br><span class="line">tar -f archive.tar --delete file1 file2 .. <span class="comment"># 从归档中删除文件</span></span><br><span class="line">tar -acvf archive.tar.gz filea fileb filec <span class="comment"># 根据扩展名自动选择压缩算法</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>使用ssh在远程主机上执行命令</strong></p>
+<p>1、执行一条命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh mec@192.168.0.1 <span class="string">&#x27;whoami&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>2、执行多条命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh mec@192.168.0.1 <span class="string">&quot;echo user: <span class="subst">$(whoami)</span>;echo OS: <span class="subst">$(uname)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>配置ssh无密码自动登录</strong></p>
+<p>1、在本地主机上创建SSH密钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -al ~/.ssh <span class="comment"># 如果已经存在id_rsa文件就不必再次生成</span></span><br><span class="line">ssh-keygen -t rsa -b 4096</span><br></pre></td></tr></table></figure>
+
+<p>2、将生成的公钥传给远程主机并将其加入到文件<code>~/.ssh/authorized_keys</code>中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh USER@REMOTE_HOST <span class="string">&quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span> &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p><strong>主机之间传输文件</strong></p>
+<p>1、使用sftp传输文件</p>
+<p>sftp -oPort&#x3D;422 <a href="mailto:&#x75;&#x73;&#x65;&#x72;&#x40;&#x73;&#x6c;&#121;&#110;&#117;&#x78;&#x2e;&#111;&#114;&#x67;">&#x75;&#x73;&#x65;&#x72;&#x40;&#x73;&#x6c;&#121;&#110;&#117;&#x78;&#x2e;&#111;&#114;&#x67;</a></p>
+<p>2、使用scp传输文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp filename user@remotehost:/home/path <span class="comment"># 将文件复制到远程主机中</span></span><br><span class="line">scp user@remotehost:/home/path/filename filename <span class="comment"># 将远程主机中的文件复制到当前目录并使用给定的文件名</span></span><br></pre></td></tr></table></figure>
+
+<p>如果SSH没有运行在端口22，使用和sftp相同的语法，利用选项-oPort指定其他端口。</p>
+<p>3、使用rsync传输文件</p>
+<p>rsync可以同步不同位置上的文件和目录。</p>
+<ul>
+<li>-a表示进行归档操作</li>
+<li>-v（verbose）表示在stdout上打印出细节信息或进度</li>
+<li>-z指定在传输时压缩数据</li>
+<li>-r强制rsync以递归方式复制目录中所有的内容</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rsync -av /home/slynux/data slynux@192.168.0.6:/home/backups/data</span><br><span class="line">rsync -av source_dir username@host:PATH</span><br><span class="line">rsync -av username@host:PATH destination</span><br><span class="line">rsync -av /home/test/ /home/backups <span class="comment"># 将一个目录中的内容同步到另一个目录</span></span><br><span class="line">rsync -av /home/test /home/backups <span class="comment"># 将包括目录本身在内的内容复制到另一个目录中</span></span><br></pre></td></tr></table></figure>
+
+<p>4、使用 netcat 传输文件</p>
+<p>接收端等待接收文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -l -p 8080 &gt; bak.tgz</span><br></pre></td></tr></table></figure>
+
+<p>发送端发送文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 192.168.1.1 8080 &lt; bak.tgz</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用 SSH 实现端口转发</strong></p>
+<p>端口转发可以将来自某台主机的IP连接重定向到另一台主机。</p>
+<p>1、将本地主机端口8000上的流量转发到<a href="http://www.kernel.org的端口80上：">www.kernel.org的端口80上：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -L 8000:www.kernel.org:80 username@localhost</span><br></pre></td></tr></table></figure>
+
+<p>2、将远程主机端口8000上的流量转发到<a href="http://www.kernel.org的端口80上：">www.kernel.org的端口80上：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -L 8000:www.kernel.org:80 username@REMOTE_MACHINE</span><br></pre></td></tr></table></figure>
+
+<p>按照上面的方法，一旦端口转发设置完毕，你会得到一个shell提示符。在进行端口转发的过程中，这个shell必须保持打开状态，什么时候想停止转发，只需要退出该shell就可以了。</p>
+<p>3、非交互式端口转发</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -fL 8000:www.kernel.org:80 username@localhost -N</span><br></pre></td></tr></table></figure>
+
+<p>-f指定ssh在执行命令前转入后台运行，-N告诉ssh无需执行命令，只进行端口转发。</p>
+<p>4、反向端口转发</p>
+<p>将远程主机端口8000上的流量转发到本地主机的端口80上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -R 8000:localhost:80 username@REMOTE_MACHINE</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用 cron 进行任务调度</strong></p>
+<p>cron表项指定了执行时间以及要执行的命令。cron表中的每一行都定义了单条命令。命令<br>可以是脚本或二进制可执行文件。</p>
+<p>cron表中的每一行（表项）均由6个字段组成，字段之间以空格分隔，字段中的多个值以逗号分隔，字段按照以下顺序排列：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">分钟（0～59） 小时（0～23） 天（1～31） 月份（1～12） 星期中的某天（0～6） 命令（在指定时间执行的脚本或命令）</span><br></pre></td></tr></table></figure>
+
+<p>星号表示任何时间段。除号表示调度的时间间隔（在分钟字段上出现的*&#x2F;5表示每隔5分钟）。</p>
+<p><code>crontab -e</code> 可用于编辑cron表：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">02 * * * * /home/slynux/test.sh <span class="comment"># 在每天中每小时的第2分钟执行脚本test.sh</span></span><br><span class="line">00 5,6,7 * * * /home/slynux/test.sh <span class="comment"># 在每天的第5、6、7小时执行脚本test.sh</span></span><br><span class="line">00 */2 * * 0 /home/slynux/script.sh <span class="comment"># 在周日的时候，每隔2个小时执行脚本script.sh</span></span><br><span class="line">00 02 * * * /sbin/shutdown -h <span class="comment"># 在每天凌晨2点关闭计算机</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-l可以列出当前用户的cron表</li>
+<li>-r可以删除当前用户的cron表</li>
+</ul>
+<hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">ssh -oPort=6000 root@192.168.1.1</span><br><span class="line">ssh -p 10385  root@xxx.xxx.com</span><br><span class="line">ssh user@locahost -p 422</span><br><span class="line"><span class="comment"># 查看4222端口是否打开</span></span><br><span class="line">lsof -i:4222</span><br><span class="line">netstat -nupl (UDP类型的端口)</span><br><span class="line">netstat -ntpl (TCP类型的端口)</span><br><span class="line">netstat -nupl | grep 3306</span><br><span class="line">netstat -ntpl | grep 15740</span><br><span class="line"><span class="comment"># 这个表示查找处于监听状态的，端口号为3306的进程</span></span><br><span class="line"></span><br><span class="line">find / -name cci-agent</span><br><span class="line"></span><br><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">chmod</span> +x /etc/rc.d/rc.local</span><br><span class="line">vim /etc/rc.d/rc.local</span><br><span class="line"></span><br><span class="line">chkconfig --add start_sunny.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">nohup</span> ./frps -c frps.ini &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="built_in">nohup</span> ./frpc -c frpc.ini &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line">vim /etc/rc.d/rc.local</span><br><span class="line"></span><br><span class="line"><span class="built_in">nohup</span> /root/logserver/hskchuantou/xxfrp/frp_0.35.1_linux_amd64/frpc -c frpc.ini &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line">poweroff</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计代码行数</span></span><br><span class="line">find . | grep <span class="string">&#x27;\.c$\|\.h$&#x27;</span> | xargs <span class="built_in">wc</span> -l</span><br><span class="line"><span class="comment"># 统计磁盘使用情况</span></span><br><span class="line"><span class="built_in">du</span> -sc /usr/share/* | <span class="built_in">sort</span> -nr</span><br><span class="line"><span class="built_in">du</span> -sc /usr/share/* | <span class="built_in">sort</span> -nr | more</span><br><span class="line"><span class="comment"># 将反汇编的结果保存到output文件中</span></span><br><span class="line">objdump -d myprog &gt; output</span><br><span class="line"><span class="comment"># 输出到文件的同时也输出到屏幕上</span></span><br><span class="line">objdump -d myprog | <span class="built_in">tee</span> output</span><br><span class="line"><span class="comment"># time工具记录了这一过程所消耗的时间</span></span><br><span class="line">time ./myprog &lt; data | <span class="built_in">tee</span> output</span><br><span class="line"><span class="comment"># /dev/null是一个特殊的文件, 任何试图输出到它的信息都会被丢弃</span></span><br><span class="line">time ./myprog &lt; data &gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># From source code</span></span><br><span class="line">wget https://download.redis.io/releases/redis-6.2.5.tar.gz</span><br><span class="line">tar xzf redis-6.2.5.tar.gz</span><br><span class="line"><span class="built_in">cd</span> redis-6.2.5</span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment"># From the official Ubuntu PPA</span></span><br><span class="line">sudo add-apt-repository ppa:redislabs/redis</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run Redis</span></span><br><span class="line">src/redis-server</span><br><span class="line">src/redis-cli</span><br></pre></td></tr></table></figure>
+
+<h3 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h3><p><strong>国内镜像</strong></p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/repogen/">https://mirrors.ustc.edu.cn/repogen/</a></p>
+<p><a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/">http://mirrors.ustc.edu.cn/</a></p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.163.com/">https://mirrors.163.com/</a></p>
+<p><strong>docker国内镜像</strong></p>
+<p>vim &#x2F;etc&#x2F;docker&#x2F;daemon.json </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [</span><br><span class="line">    &quot;https://docker.mirrors.ustc.edu.cn&quot;,</span><br><span class="line">    &quot;http://hub-mirror.c.163.com&quot;,</span><br><span class="line">    &quot;https://registry.docker-cn.com&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除镜像</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images | grep <span class="string">&quot;userpool&quot;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>)</span><br><span class="line">docker rmi -f $(docker images | grep <span class="string">&quot;/test/golang-gin-app&quot;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>)</span><br><span class="line">docker rmi -f $(docker images | grep <span class="string">&quot;none&quot;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>)</span><br><span class="line">docker stop $(docker ps -a | grep <span class="string">&quot;Exited&quot;</span> | awk <span class="string">&#x27;&#123;print $1 &#125;&#x27;</span>)</span><br><span class="line">docker stop $(docker ps -a | grep <span class="string">&quot;Up&quot;</span> | awk <span class="string">&#x27;&#123;print $1 &#125;&#x27;</span>)</span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -a | grep <span class="string">&quot;Exited&quot;</span> | awk <span class="string">&#x27;&#123;print $1 &#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it container_name bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">su - postgres</span><br><span class="line">--- 所有数据库</span><br><span class="line">SELECT * FROM pg_database;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 备份</span></span><br><span class="line">pg_dumpall &gt; pg_backup.bak</span><br><span class="line">psql -f pg_backup.bak postgres</span><br><span class="line">pg_dumpall -U postgres &gt; databackup.bak</span><br><span class="line"></span><br><span class="line"><span class="comment"># 还原</span></span><br><span class="line">psql basicinfo2 &lt; basicinfo_20210223_171724</span><br><span class="line"></span><br><span class="line">tar -zcvf test4.tar.gz test4/    //将test4文件夹做为归档文件</span><br><span class="line">tar -zxvf test4.tar.gz 			 //归档文件解压缩</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="k8s"><a href="#k8s" class="headerlink" title="k8s"></a>k8s</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line">kubectl get namespace</span><br><span class="line">kubectl get ns</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一个 shell 进入 Pod 中运行的容器：</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -it secret-test-pod -- /bin/bash</span><br><span class="line">kubectl <span class="built_in">exec</span> -i -t env-single-secret -- /bin/sh -c <span class="string">&#x27;echo $SECRET_USERNAME&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">curl -LO https://dl.k8s.io/release/v1.20.0/bin/linux/amd64/kubectl</span><br><span class="line">install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64</span><br><span class="line">install minikube-linux-amd64 /usr/local/bin/minikube</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">kubectl <span class="built_in">exec</span> test-deployment-8697bdd6c4-sdhmm  -it bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 位于名字空间中的资源</span></span><br><span class="line">kubectl api-resources --namespaced=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 不在名字空间中的资源</span></span><br><span class="line">kubectl api-resources --namespaced=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 Pod：</span></span><br><span class="line">kubectl apply -f memory-request-limit-3.yaml --namespace=mem-example</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 Pod 状态：</span></span><br><span class="line">kubectl get pod memory-demo-3 --namespace=mem-example</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 Pod 日志：</span></span><br><span class="line">kubectl logs &lt;podname&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看前一个 Pod 日志：</span></span><br><span class="line">kubectl logs &lt;podname&gt; --previous</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除 Pod：</span></span><br><span class="line">kubectl delete pod memory-demo-3 --namespace=mem-example</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除命名空间。下面的命令会删除你根据这个任务创建的所有 Pod：</span></span><br><span class="line">kubectl delete namespace mem-example</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示有关 Deployment 的信息：</span></span><br><span class="line">kubectl get deployments hello-world</span><br><span class="line">kubectl describe deployments hello-world</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示有关 ReplicaSet 对象的信息：</span></span><br><span class="line">kubectl get replicasets</span><br><span class="line">kubectl describe replicasets</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建公开 Deployment 的 Service 对象：</span></span><br><span class="line">kubectl expose deployment hello-world --<span class="built_in">type</span>=LoadBalancer --name=my-service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示有关 Service 的信息：</span></span><br><span class="line">kubectl get services my-service</span><br><span class="line">kubectl describe services my-service</span><br><span class="line"></span><br><span class="line"><span class="comment"># pod的内部地址</span></span><br><span class="line">kubectl get pods --output=wide</span><br><span class="line">kubectl get pods -l run=my-nginx -o yaml | grep podIP</span><br><span class="line">kubectl get pods --selector=<span class="string">&quot;run=load-balancer-example&quot;</span> --output=wide</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动打开 Hello World 应用程序</span></span><br><span class="line">minikube service my-service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除服务</span></span><br><span class="line">kubectl delete services my-service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除正在运行 Hello World 应用程序的 Deployment，ReplicaSet 和 Pod</span></span><br><span class="line">kubectl delete deployment hello-world</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 Service</span></span><br><span class="line">kubectl expose deployment/my-nginx</span><br><span class="line">service/my-nginx exposed</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看你的 Service 资源:</span></span><br><span class="line">kubectl get svc my-nginx</span><br><span class="line">kubectl describe svc my-nginx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># kustomization.yaml</span></span><br><span class="line">kubectl apply -k ./</span><br><span class="line">kubectl get -k .</span><br><span class="line">kubectl delete -k ./</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 secret</span></span><br><span class="line">kubectl create secret docker-registry regcred1 --docker-server=docker.pkg.coding.net --docker-username=1112@qq.com --docker-password=123 --docker-email=<span class="built_in">test</span>@qq.com -n <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">kubectl create secret generic harborsecret --from-file=.dockerconfigjson=/root/.docker/config.json --<span class="built_in">type</span>=kubernetes.io/dockerconfigjson</span><br><span class="line"></span><br><span class="line">kubectl create secret generic harborsecret \</span><br><span class="line">    --from-file=/root/.docker/config.json \</span><br><span class="line">    --<span class="built_in">type</span>=kubernetes.io/dockerconfigjson</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">minikube delete</span><br><span class="line">kubectl delete node --all</span><br><span class="line"><span class="built_in">rm</span> -rf /usr/local/bin/kubectl</span><br><span class="line"><span class="built_in">rm</span> -rf ~/.kube</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">port</span><br><span class="line">port是k8s集群内部访问service的端口，即通过clusterIP: port可以访问到某个service</span><br><span class="line"></span><br><span class="line">nodePort</span><br><span class="line">nodePort是外部访问k8s集群中service的端口，通过nodeIP: nodePort可以从外部访问到某个service。</span><br><span class="line"></span><br><span class="line">targetPort</span><br><span class="line">targetPort是pod的端口，从port和nodePort来的流量经过kube-proxy流入到后端pod的targetPort上，最后进入容器。</span><br><span class="line"></span><br><span class="line">containerPort</span><br><span class="line">containerPort是pod内部容器的端口，targetPort映射到containerPort。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="helm"><a href="#helm" class="headerlink" title="helm"></a>helm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3</span><br><span class="line"><span class="built_in">chmod</span> 700 get_helm.sh</span><br><span class="line">./get_helm.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 minio</span></span><br><span class="line">helm repo remove stable</span><br><span class="line">helm repo add stable http://mirror.azure.cn/kubernetes/charts/</span><br><span class="line">helm repo update</span><br><span class="line">helm install stable/minio --generate-name</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="k3s"><a href="#k3s" class="headerlink" title="k3s"></a>k3s</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 安装k3s</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载 k3s 二进制文件，k3s-airgap-images-$ARCH.tar(k3s-airgap-images-amd64.tar) tar文件</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /var/lib/rancher/k3s/agent/images/</span><br><span class="line"><span class="built_in">cp</span> ./k3s-airgap-images-<span class="variable">$ARCH</span>.tar /var/lib/rancher/k3s/agent/images/</span><br><span class="line"><span class="built_in">cp</span> ./k3s /usr/local/bin/k3s</span><br><span class="line"></span><br><span class="line">wget https://get.k3s.io</span><br><span class="line"></span><br><span class="line">INSTALL_K3S_SKIP_DOWNLOAD=<span class="literal">true</span> ./install-k3s.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">systemctl restart k3s</span><br><span class="line">systemctl restart k3s-agent</span><br><span class="line">service k3s restart</span><br><span class="line">service k3s-agent restart</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="k8s-service"><a href="#k8s-service" class="headerlink" title="k8s service"></a>k8s service</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">kube-node-service</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">kube-node-service</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">NodePort</span>      <span class="comment">#这里代表是NodePort类型的</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">port:</span> <span class="number">8080</span>        <span class="comment">#这里的端口和clusterIP对应，即ip:8080,供内部访问。</span></span><br><span class="line">    <span class="attr">targetPort:</span> <span class="number">8080</span>  <span class="comment">#端口一定要和container暴露出来的端口对应</span></span><br><span class="line">    <span class="attr">protocol:</span> <span class="string">TCP</span></span><br><span class="line">    <span class="attr">nodePort:</span> <span class="number">32143</span>   <span class="comment"># 所有的节点都会开放此端口，此端口供外部调用。</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">web</span>          <span class="comment">#这里选择器一定要选择容器的标签，之前写name:kube-node是错的。</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="rancher"><a href="#rancher" class="headerlink" title="rancher"></a>rancher</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -sfL http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn sh -</span><br><span class="line"></span><br><span class="line">k3s server  --flannel-iface enp0s3  --kube-apiserver-arg service-node-port-range=1-65535</span><br><span class="line"></span><br><span class="line">k3s agent --flannel-iface enp0s3  --server https://centos1:6443 --token K109783da72467af34e663138dd8dd99f9cc7507c08c87eea726dfe8ad934359b94::server:afa081a89a86fa3008e0754f265f1911</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name rancher3 -p 8880:80 -p 8443:443 --privileged -v /var/lib/rancher/:/var/lib/rancher/ rancher/rancher</span><br><span class="line"></span><br><span class="line">docker run --privileged -d --<span class="built_in">rm</span> -p 443:443 -v /var/lib/rancher/:/var/lib/rancher/ --name rancher rancher/rancher:stable</span><br><span class="line"></span><br><span class="line">docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 -v /var/lib/rancher/:/var/lib/rancher/ --name rancher rancher/rancher:stable</span><br><span class="line"></span><br><span class="line">sudo docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 -v /var/lib/rancher/:/var/lib/rancher/ rancher/rancher:stable</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 代理</span></span><br><span class="line">--proxy http://127.0.0.1:10809</span><br><span class="line"><span class="comment"># 镜像</span></span><br><span class="line">--registry=https://registry.npmmirror.com</span><br><span class="line"><span class="comment"># 升级npm</span></span><br><span class="line">npm install -g npm --registry=https://registry.npmmirror.com</span><br><span class="line"><span class="comment"># 清缓存</span></span><br><span class="line">npm cache verify</span><br><span class="line">npm cache clean --force</span><br><span class="line">npm uninstall *</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无法加载文件 ******.ps1，因为在此系统中禁止执行脚本。有关详细信息，请参阅 &quot;get-help about_signing&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用管理员身份运行 PowerShell</span></span><br><span class="line"><span class="built_in">set-executionpolicy</span> remotesigned</span><br><span class="line">Y</span><br></pre></td></tr></table></figure>
+
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 杀死进程</span></span><br><span class="line">taskkill /F /im Xshell.exe</span><br><span class="line"><span class="comment"># 树形文件列表</span></span><br><span class="line">tree /F</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wget -c https://go.dev/dl/go1.17.6.linux-amd64.tar.gz</span><br><span class="line"><span class="built_in">rm</span> -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/go/bin</span><br><span class="line">go version</span><br><span class="line"></span><br><span class="line"><span class="comment"># linux</span></span><br><span class="line">SET CGO_ENABLED=0</span><br><span class="line">SET GOOS=linux</span><br><span class="line">SET GOARCH=amd64</span><br><span class="line"></span><br><span class="line"><span class="comment"># 代理</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line">go <span class="built_in">env</span> -w GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure>
+
+<h3 id="Edge"><a href="#Edge" class="headerlink" title="Edge"></a>Edge</h3><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 查看同步设置</span><br><span class="line">edge://sync-internals/</span><br></pre></td></tr></table></figure>
+
+<h3 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h3><p>在 PostgreSQL 中给一般用户使用的字符类型有三种</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>character varying(n), varchar(n)</td>
+<td>有限制的变长</td>
+</tr>
+<tr>
+<td>character(n), char(n)</td>
+<td>定长，空格填充</td>
+</tr>
+<tr>
+<td>text</td>
+<td>无限变长</td>
+</tr>
+</tbody></table>
+<p><code>varchar(n)</code> 和 <code>char(n)</code> 分别是 <code>character varying(n)</code> 和 <code>character(n)</code> 的别名。</p>
+<p>有长度声明词的 <code>character varying(n)</code> 或者 <code>character(n)</code> 那么超长的值将被截断成n个字符，而不会抛出错误（这也是SQL标准的要求）。</p>
+<p>没有长度声明词的 <code>character</code> 等效于 <code>character(1)</code> 。</p>
+<p>没有长度声明词的 <code>character varying</code> ，那么该类型接受任何长度的串。</p>
+<p>这些类型的存储需求是 4 字节加上实际的字串，如果是 <code>character</code> 的话再加上填充的字节。</p>
+<p>不管怎样，允许存储的最长字串大概是 1 GB。</p>
+<p>如果你想要存储没有指定上限的长串，使用 <code>text</code> 或没有长度声明的 <code>character varying</code> ，而不是给出一个任意长度限制）。</p>
+<p>这三种类型之间没有性能差别，只不过是在使用填充空白的类型的时候需要更多存储尺寸，以及在存储到一个有长度约束的列时需要少量额外CPU周期来检查长度。虽然在某些其它的数据库系统里，<code>character(n)</code> 有一定的性能优势，但在 PostgreSQL 里没有。事实上，<code>character(n)</code> 通常是这三种类型之中最慢的一个，因为它需要额外的存储开销。在大多数情况下，应该使用 <code>text</code> 或者 <code>character varying</code> 。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.lolive.top">no one</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.lolive.top/posts/f328253f/">https://blog.lolive.top/posts/f328253f/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.lolive.top" target="_blank">𝗟𝗼𝗹𝗶𝗟𝗶𝘃𝗲</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/sql/">sql</a><a class="post-meta__tags" href="/tags/Docker/">Docker</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/25/VEjx9DIBZ4nkiwN.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://fastly.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/ee0d4182/" title="ffmpeg推流"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">ffmpeg推流</div></div></a></div><div class="next-post pull-right"><a href="/posts/b3869c18/" title="剪贴板📋"><img class="cover" src="https://i.loli.net/2021/01/09/PovQB5M3NEGR4IC.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">剪贴板📋</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar2.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">no one</div><div class="author-info__description">记录，分享</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:loli@lolive.top" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux"><span class="toc-number">2.</span> <span class="toc-text">linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis"><span class="toc-number">3.</span> <span class="toc-text">Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker"><span class="toc-number">4.</span> <span class="toc-text">docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql"><span class="toc-number">5.</span> <span class="toc-text">sql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#k8s"><span class="toc-number">6.</span> <span class="toc-text">k8s</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#helm"><span class="toc-number">7.</span> <span class="toc-text">helm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#k3s"><span class="toc-number">8.</span> <span class="toc-text">k3s</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#k8s-service"><span class="toc-number">8.1.</span> <span class="toc-text">k8s service</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rancher"><span class="toc-number">9.</span> <span class="toc-text">rancher</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm"><span class="toc-number">10.</span> <span class="toc-text">npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows"><span class="toc-number">11.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Go"><span class="toc-number">12.</span> <span class="toc-text">Go</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Edge"><span class="toc-number">13.</span> <span class="toc-text">Edge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PostgreSQL"><span class="toc-number">14.</span> <span class="toc-text">PostgreSQL</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2021/02/25/VEjx9DIBZ4nkiwN.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By no one</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://fastly.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script id="click-heart" src="https://fastly.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script src="https://fastly.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
